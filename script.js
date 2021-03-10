@@ -62,11 +62,18 @@ async function getData()
     for(let z =2; z < table1.rows.length ; z++){
         let countries = {
             label : table1.rows[z].cells[1].innerHTML,
-            stats : table1.rows[z].cells[z].innerHTML
             
         };
-        console.log(countries)
-        // console.log(table1.rows[z].cells[2])
+        labels.push(countries)
+        for(let i =2; i < table1.rows.length ; i++){
+                let stats = {
+                stat : table1.rows[z].cells[i],
+                
+            };
+            if(stats.stat != undefined){
+                console.log(stats.stat.innerHTML)
+            }
+        }
     }
 //}
 //loopData()
